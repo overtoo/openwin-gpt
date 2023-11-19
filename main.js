@@ -1,16 +1,16 @@
+// OpenAI API Key
+// const apiKey = "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";
 
+let apiKey;
 
-let apiKey = "YOUR_API_KEY";
-
-let systemPrompt = "talk like pirate";
+let systemPrompt;
 let messages = [{ role: "system", content: systemPrompt }];
 
 function saveApiKey() {
   var apiKeyInput = document.getElementById("api-key-input");
-  var apiKey = apiKeyInput.value;
+  apiKey = apiKeyInput.value;
   if (apiKey) {
-    localStorage.setItem("apiKey", apiKey);
-    alert("API Key saved successfully!");
+    // alert("API Key saved successfully!");
   } else {
     alert("Please enter an API key");
   }
@@ -18,11 +18,10 @@ function saveApiKey() {
 
 function saveSystemPrompt() {
   var systemPromptInput = document.getElementById("system-prompt-input");
-  var newSystemPrompt = systemPromptInput.value;
-  if (newSystemPrompt) {
-    localStorage.setItem("systemPrompt", newSystemPrompt);
-    systemPrompt = newSystemPrompt; // Update the systemPrompt variable
-    alert("System prompt saved successfully!");
+  systemPrompt = systemPromptInput.value;
+  if (systemPrompt) {
+    messages = [{ role: "system", content: systemPrompt }]; // Update the messages array here
+    // alert("System prompt saved successfully!");
   } else {
     alert("Please enter a system prompt");
   }
