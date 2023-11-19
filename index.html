@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>title goes here</title>
+  </head>
+  <body>
+    <div class="box-questions">
+      <div class="header">
+        <p>custom gpt</p>
+      </div>
+      <div id="history">
+        <!-- Here goes the chat generated according to the answers -->
+      </div>
+      <div class="footer">
+        <form
+          id="message-form"
+          onsubmit="event.preventDefault(); sendMessage();"
+        >
+          <input type="text" id="message-input" placeholder="Ask here..." />
+          <button class="btn-submit" id="btn-submit" type="submit">send</button>
+        </form>
+      </div>
+      <p id="status">.</p>
+    </div>
+
+    <input
+      type="text"
+      id="api-key-input"
+      class="api-key-elements"
+      placeholder="Enter your API key here"
+    />
+    <button onclick="saveApiKey()" class="api-key-elements">
+      Save API Key
+    </button>
+    <input
+      type="text"
+      id="system-prompt-input"
+      class="system-prompt-elements"
+      placeholder="Enter your system prompt here"
+    />
+    <button onclick="saveSystemPrompt()" class="system-prompt-elements">
+      Save System Prompt
+    </button>
+  </body>
+  <script src="main.js"></script>
+</html>
