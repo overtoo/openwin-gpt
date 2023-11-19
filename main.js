@@ -1,5 +1,4 @@
 // OpenAI API Key
-// const apiKey = "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";
 
 let apiKey;
 
